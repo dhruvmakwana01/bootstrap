@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Your Trip</title>
+    <title>Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -122,79 +122,32 @@
                         <a class="nav-link" href="#contact">Contact</a>
                     </li>
                 </ul>
-                <a href="login.html" class="btn btn-warning ms-lg-3">Login</a>
                 <a href="signup.html" class="btn btn-warning ms-lg-3">Sign Up</a>
             </div>
         </div>
     </nav>
 
-    <section class="py-5 bg-light text-center">
-        <div class="container">
-            <h1 class="fw-bold">Travel Booking Form</h1>
-            <p class="lead">Fill the form and submit your travel request</p>
-        </div>
-    </section>
-
-    <section class="py-5">
+    <section class="py-5 bg-light">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-md-8 col-lg-6">
                     <div class="card shadow-lg p-4 rounded-4">
-                        <h3 class="text-center fw-bold mb-4">Book Your Trip</h3>
+                        <h3 class="text-center fw-bold mb-4">Welcome Back</h3>
                         <form>
-                            <div class="row">
-                                <div class="col-12 col-md-6 mb-3">
-                                    <label class="form-label">First Name</label>
-                                    <input type="text" class="form-control" id="firstnameInput"
-                                        aria-describedby="firstnameHelp" placeholder="Enter your first name">
-                                </div>
-                                <div class="col-12 col-md-6 mb-3">
-                                    <label class="form-label">Last Name</label>
-                                    <input type="text" class="form-control" placeholder="Enter your last name">
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12 col-md-6 mb-3">
-                                    <label class="form-label">Email address</label>
-                                    <input type="email" class="form-control" placeholder="Enter your email address">
-                                </div>
-
-                                <div class="col-12 col-md-6 mb-3">
-                                    <label class="form-label">Select Destination</label>
-                                    <select class="form-select" aria-label="Default select example">
-                                        <option selected>Goa</option>
-                                        <option value="1">Agra</option>
-                                        <option value="2">Jaipur</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12 col-md-6 mb-3">
-                                    <label class="form-label">Travel Date</label>
-                                    <input type="date" class="form-control">
-                                </div>
-                                <div class="col-12 col-md-6 mb-3">
-                                    <label class="form-label">Number of People</label>
-                                    <input type="number" class="form-control" placeholder="Enter number of people">
-                                </div>
-                            </div>
-
                             <div class="mb-3">
-                                <label class="form-label">Message / Requirement</label>
-                                <textarea class="form-control" rows="4"
-                                    placeholder="Enter your travel requirements"></textarea>
+                                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1"
+                                    aria-describedby="emailHelp" placeholder="Enter your email address">
                             </div>
-                            <button type="submit" class="btn btn-success w-100">Submit</button>
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter your password">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
                     </div>
-
-
                 </div>
-
-
-                </form>
             </div>
-        </div>
-        </div>
         </div>
     </section>
 
