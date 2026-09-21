@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Packages - ChaloChale</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+        crossorigin="anonymous">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer" />
+
+    <style>
+
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-gray: #f8f9fa;
+            --medium-gray: #e9ecef;
+            --dark-gray: #495057;
+            --text-dark: #212529;
+            --text-light: #6c757d;
+            --white: #ffffff;
+
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+            --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.16);
+
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI',
+                Roboto, 'Helvetica Neue', Arial, sans-serif;
+
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+        }
+
+
+        /* Navbar */
+
+        .navbar {
+            background: var(--white) !important;
+            padding: 1rem 0;
+            box-shadow: var(--shadow-sm);
+            border-bottom: 1px solid var(--medium-gray);
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color) !important;
+            transition: var(--transition);
+        }
+
+        .navbar-brand:hover {
+            color: var(--secondary-color) !important;
+        }
+
+        .nav-link {
+            color: var(--text-dark) !important;
+            font-weight: 500;
+            padding: 0.5rem 1rem !important;
+            transition: var(--transition);
+            border-radius: 6px;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--secondary-color) !important;
+            background: var(--light-gray);
+        }
+
+        .btn-warning {
+            background: var(--secondary-color);
+            border: none;
+            padding: 0.6rem 1.5rem;
+            font-weight: 600;
+            transition: var(--transition);
+            border-radius: 6px;
+        }
+
+        .btn-warning:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+            color: var(--white);
+        }
+
+
+        /* Page Header */
+
+        .page-header {
+            background: var(--light-gray);
+            padding: 5rem 0;
+            text-align: center;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+
+        .page-header h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            max-width: 750px;
+            margin: 0 auto;
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+
+        /* Packages Section */
+
+        .packages-section {
+            padding: 5rem 0;
+        }
+
+        .package-card {
+            border: 1px solid var(--medium-gray);
+            border-radius: 12px;
+            overflow: hidden;
+            background: var(--white);
+            height: 100%;
+            transition: var(--transition);
+        }
+
+        .package-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--secondary-color);
+        }
+
+
+        /* Package Image */
+
+        .package-image-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .package-image {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .package-card:hover .package-image {
+            transform: scale(1.05);
+        }
+
+
+        /* Duration Badge */
+
+        .duration-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+
+            background: rgba(44, 62, 80, 0.9);
+            color: var(--white);
+
+            padding: 0.5rem 0.9rem;
+            border-radius: 6px;
+
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+
+        /* Package Body */
+
+        .package-card .card-body {
+            padding: 1.75rem;
+        }
+
+        .package-title {
+            color: var(--primary-color);
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .package-location {
+            color: var(--secondary-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .package-description {
+            color: var(--text-light);
+            margin-bottom: 1.25rem;
+        }
+
+
+        /* Package Details */
+
+        .package-details {
+            border-top: 1px solid var(--medium-gray);
+            border-bottom: 1px solid var(--medium-gray);
+            padding: 1rem 0;
+            margin-bottom: 1.25rem;
+        }
+
+        .package-detail {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.7rem;
+            color: var(--dark-gray);
+            font-size: 0.95rem;
+        }
+
+        .package-detail:last-child {
+            margin-bottom: 0;
+        }
+
+        .package-detail i {
+            width: 25px;
+            color: var(--secondary-color);
+            margin-right: 0.5rem;
+        }
+
+
+        /* Price */
+
+        .package-price {
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+        }
+
+        .price-label {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+
+        /* Book Button */
+
+        .btn-book {
+            background: var(--primary-color);
+            color: var(--white);
+            border: none;
+
+            padding: 0.7rem 1.5rem;
+            border-radius: 6px;
+
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .btn-book:hover {
+            background: #1a252f;
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+
+        /* Popular Badge */
+
+        .popular-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+
+            background: var(--accent-color);
+            color: var(--white);
+
+            padding: 0.5rem 0.8rem;
+            border-radius: 6px;
+
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+
+        /* Section Heading */
+
+        .section-title {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto 3rem;
+        }
+
+
+        /* Footer */
+
+        footer {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 4rem 0 2rem;
+            margin-top: 2rem;
+        }
+
+        footer h5 {
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--white);
+        }
+
+        footer p {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        footer a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        footer a:hover {
+            color: var(--white);
+        }
+
+        footer .social-icons a {
+            font-size: 1.25rem;
+            margin-right: 1rem;
+            transition: var(--transition);
+        }
+
+        footer .social-icons a:hover {
+            transform: translateY(-3px);
+            color: var(--white);
+        }
+
+        footer hr {
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+
+        /* Responsive */
+
+        @media (max-width: 992px) {
+
+            .page-header {
+                padding: 4rem 0;
+            }
+
+            .page-header h1 {
+                font-size: 2.4rem;
+            }
+
+            .package-image {
+                height: 230px;
+            }
+        }
+
+
+        @media (max-width: 768px) {
+
+            .page-header {
+                padding: 3.5rem 1rem;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .page-header p {
+                font-size: 1rem;
+            }
+
+            .packages-section {
+                padding: 3.5rem 0;
+            }
+
+            .section-title {
+                font-size: 1.9rem;
+            }
+
+            .navbar-brand {
+                font-size: 1.25rem;
+            }
+        }
+
+
+        @media (max-width: 576px) {
+
+            .page-header {
+                padding: 3rem 1rem;
+            }
+
+            .page-header h1 {
+                font-size: 1.75rem;
+            }
+
+            .packages-section {
+                padding: 3rem 0;
+            }
+
+            .package-image {
+                height: 210px;
+            }
+
+            .package-card .card-body {
+                padding: 1.25rem;
+            }
+
+            footer {
+                padding: 3rem 0 1.5rem;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- Navbar -->
+
+    <nav class="navbar navbar-expand-lg navbar-dark">
+
+        <div class="container">
+
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="fa-solid fa-plane-departure me-2"></i>
+                ChaloChale
+            </a>
+
+
+            <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+
+                <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            Home
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="destinations.html">
+                            Destinations
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="packages.html">
+                            Packages
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="booking.html">
+                            Booking
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+
+
+                <a href="login.html"
+                    class="btn btn-warning ms-lg-3">
+                    Login
+                </a>
+
+                <a href="signup.html"
+                    class="btn btn-warning ms-lg-3">
+                    Sign Up
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- Page Header -->
+
+    <header class="page-header">
+
+        <div class="container">
+
+            <h1>Travel Packages</h1>
+
+            <p>
+                Explore our carefully planned travel packages with
+                comfortable stays, transportation, sightseeing,
+                meals and unforgettable experiences.
+            </p>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- Packages -->
+
+    <section class="packages-section">
+
+        <div class="container">
+
+            <h2 class="text-center section-title">
+                Explore Our Packages
+            </h2>
+
+            <p class="text-center section-subtitle">
+                Choose from a variety of travel packages designed
+                for different destinations and travel experiences.
+            </p>
+
+
+            <div class="row g-4">
+
+
+                <!-- Manali Package -->
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="package-card shadow">
+
+                        <div class="package-image-container">
+
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPIjbTWz9JiRiVqXS9BlwqXhuQR4Rsby-UmX4sPJvgfA&s=100"
+                                class="package-image"
+                                alt="Manali">
+
+                            <span class="duration-badge">
+                                <i class="fa-solid fa-calendar-days me-1"></i>
+                                10 Days / 9 Nights
+                            </span>
+
+                            <span class="popular-badge">
+                                Popular
+                            </span>
+
+                        </div>
+
+
+                        <div class="card-body">
+
+                            <h3 class="package-title">
+                                Manali Adventure Escape
+                            </h3>
+
+                            <div class="package-location">
+                                <i class="fa-solid fa-location-dot me-2"></i>
+                                Manali, Himachal Pradesh
+                            </div>
+
+                            <p class="package-description">
+                                Experience the mountains with scenic
+                                valleys, adventure activities, local
+                                sightseeing and peaceful surroundings.
+                            </p>
+
+
+                            <div class="package-details">
+
+                                <div class="package-detail">
+                                    <i class="fa-solid fa-hotel"></i>
+                                    Hotel stay included
+                                </div>
+
+                                <div class="package-detail">
+                                    <i class="fa-solid fa-bus"></i>
+                                    AC transport included
+                                </div>
+
+                                <div class="package-detail">
+                                    <i class="fa-solid fa-utensils"></i>
+                                    Breakfast & dinner
+                                </div>
+
+                                <div class="package-detail">
+                                    <i class="fa-solid fa-camera"></i>
+                                    Sightseeing included
+                                </div>
+
+                            </div>
+
+
+                            <div class="d-flex justify-content-between align-items-center">
+
+                                <div>
+                                    <div class="price-label">
+                                        Starting from
+                                    </div>
+
+                                    <div class="package-price">
+                                        ₹28,999/-
+                                    </div>
+                                </div>
+
+                                <a href="booking.html"
+                                    class="btn btn-book">
+                                    Book Now
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Goa Package -->
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="package-card shadow">
+
+                        <div class="package-image-container">
+
+                            <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=1000&q=80"
+                                class="package-image"
+                                alt="Goa">
+
+                            <span class="duration-badge">
+                                <i class="fa-solid fa-calendar-days me-1"></i>
+                                7 Days / 6 Nights
+                            </span>
+
+                        </div>
+
+
+                        <div class="card-body">
+
+                            <h3 class="package-title">
+                                Goa Beach Holiday
+                            </h3>
+
+                            <div class="package-location">
+                                <i class="fa-solid fa-location-dot me-2"></i>
+                                Goa
+                            </div>
+
+                            <p class="package-description">
+                                Relax on beautiful beaches, explore
+                                historic locations and enjoy Goa's
+                                vibrant coastal atmosphere.
+                            </p>
+
+
+                            <div class="package-details">
+
+                                <div class="package-detail">
+                                    <i class="fa-solid fa-hotel"></i>
+                                    3-star hotel stay
+                                </div>
+
+                                <div class="package-detail">
+                                    <i class="fa-solid fa-car"></i>
+                                    Private local transport
+                                </div>
+
+                                <div class="package-detail">
+                                    <i class="fa-solid fa-utensils"></i>
+                                    Breakfast included
+                                </div>
+
+                                <div class="package-detail">
+                                    <i class="fa-solid fa-camera"></i>
+                                    Beach & city sightseeing
+                                </div>
+
+                            </div>
+
+
+                            <div class="d-flex justify-content-between align-items-center">
+
+                                <div>
+                                    <div class="price-label">
+                                        Starting from
+                                    </div>
+
+                                    <div class="package-price">
+                                        ₹21,499/-
+                                    </div>
+                                </div>
+
+                                <a href="booking.html"
+                                    class="btn btn-book">
+                                    Book Now
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Kerala Package -->
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="package-card shadow">
+
+                        <div class="package-image-container">
+
+                            <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1000&q=80"
+                                class="package-image"
+                                alt="Kerala">
+
+                            <span class="duration-badge">
+                                <i class="fa-solid fa-calendar-days me-1"></i>
+                                8 Days / 7 Nights
+                            </span>
+
+                            <span class="popular-badge">
+                                Best Seller
+                            </span>
+
+                        </div>
+
+
+                        <div class="card-body">
+
+                            <h3 class="package-title">
+                                Kerala Nature Retreat
+                            </h3>
+
+                            <div class="package-location">
+                                <i class="fa-solid fa-location-dot me-2"></i>
+                                Kerala
+                            </div>
+
+                            <p class="package-description">
+                                Discover peaceful backwaters, tea
+                                plantations, beaches and beautiful
+                                natural landscapes across Kerala.
+                            </p>
+
+
+                            <div class="package-details">
+
+                                <div class="package-detail">
+                                    <i class="fa-solid fa-hotel"></i>
+                                    Hotel & houseboat stay
+                                </div>
+
+                                <div class="package-detail">
+                                    <i class="fa-solid fa-car"></i>
+                                    Private AC vehicle
+                                </div>
+
+                                <div class="package-detail">
+                                    <i class="fa-solid fa-utensils"></i>
+                                    Breakfast & dinner
+                                </div>
+
+                                <div class="package-detail">
+                                    <i class="fa-solid fa-camera"></i>
+                                    Complete sightseeing
+                                </div>
+
+                            </div>
+
+
+                            <div class="d-flex justify-content-between align-items-center">
+
+                                <div>
+                                    <div class="price-label">
+                                        Starting from
+                                    </div>
+
+                                    <div class="package-price">
+                                        ₹24,999/-
+                                    </div>
+                                </div>
+
+                                <a href="booking.html"
+                                    class="btn btn-book">
+                                    Book Now
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Jaipur Package -->
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="package-card shadow">
+
+                        <div class="package-image-container">
+
+                            <img src="https://images.unsplash.com/photo-1477587458883-47145ed94245?w=1000&q=80"
+                                class="package-image"
+                                alt="Jaipur">
+
+                            <span class="duration-badge">
+                                <i class="fa-solid fa-calendar-days me-1"></i>
+                                5 Days / 4 Nights
+                            </span>
+
+                        </div>
+
+
+                        <div class="card-body">
+
+                            <h3 class="package-title">
+                                Jaipur Heritage Tour
+                            </h3>
+
+                            <div class="package-location">
+                                <i class="fa-solid fa-location-dot me-2"></i>
+                                Jaipur, Rajasthan
+                            </div>
+
+                            <p class="package-description">
+                                Explore magnificent forts, royal
+                                palaces, local markets and the rich
+                                culture of the Pink City.
+                            </p>
+
+
+                            <div class="package-details">
+
+                                <div class="package-detail">
+                                    <i class="fa-solid fa-hotel"></i>
+                                    3-star hotel stay
+                                </div>
+
+                                <div class="package-detail">
+                                    <i class="fa-solid fa-car"></i>
+                                    AC transportation
+                                </div>
+
+                                <div class="package-detail">
+                                    <i class="fa-solid fa-utensils"></i>
+                                    Breakfast included
+                                </div>
+
+                                <div class="package-detail">
+                                    <i class="fa-solid fa-camera"></i>
+                                    Heritage sightseeing
+                                </div>
+
+                            </div>
+
+
+                            <div class="d-flex justify-content-between align-items-center">
+
+                                <div>
+                                    <div class="price-label">
+                                        Starting from
+                                    </div>
+
+                                    <div class="package-price">
+                                        ₹16,999/-
+                                    </div>
+                                </div>
+
+                                <a href="booking.html"
+                                    class="btn btn-book">
+                                    Book Now
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Agra Package -->
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="package-card shadow">
+
+                        <div class="package-image-container">
+
+                            <img src="https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1000&q=80"
+                                class="package-image"
+                                alt="Agra">
+
+                            <span class="duration-badge">
+                                <i class="fa-solid fa-calendar-days me-1"></i>
+                                4 Days / 3 Nights
+                            </span>
+
+                        </div>
+
+
+                        <div class="card-body">
+
+                            <h3 class="package-title">
+                                Agra Heritage Escape
+                            </h3>
+
+                            <div class="package-location">
+                                <i class="fa-solid fa-location-dot me-2"></i>
+                                Agra, Uttar Pradesh
+                            </div>
+
+                            <p class="package-description">
+                                Discover the Taj Mahal and explore
+                                the magnificent Mughal monuments
+                                and historical attractions.
+                            </p>
+
+
+                            <div class="package-details">
+
+                                <div class="package-detail">
+                                    <i class="fa-solid fa-hotel"></i>
+                                    3-star hotel stay
+                                </div>
+
+                                <div class="package-detail">
+                                    <i class="fa-solid fa-car"></i>
+                                    Local AC transport
+                                </div>
+
+                                <div class="package-detail">
+                                    <i class="fa-solid fa-utensils"></i>
+                                    Breakfast included
+                                </div>
+
+                                <div class="package-detail">
+                                    <i class="fa-solid fa-camera"></i>
+                                    Monument sightseeing
+                                </div>
+
+                            </div>
+
+
+                            <div class="d-flex justify-content-between align-items-center">
+
+                                <div>
+                                    <div class="price-label">
+                                        Starting from
+                                    </div>
+
+                                    <div class="package-price">
+                                        ₹12,999/-
+                                    </div>
+                                </div>
+
+                                <a href="booking.html"
+                                    class="btn btn-book">
+                                    Book Now
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Himachal Package -->
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="package-card shadow">
+
+                        <div class="package-image-container">
+
+                            <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1000&q=80"
+                                class="package-image"
+                                alt="Himachal Pradesh">
+
+                            <span class="duration-badge">
+                                <i class="fa-solid fa-calendar-days me-1"></i>
+                                9 Days / 8 Nights
+                            </span>
+
+                        </div>
+
+
+                        <div class="card-body">
+
+                            <h3 class="package-title">
+                                Himachal Explorer
+                            </h3>
+
+                            <div class="package-location">
+                                <i class="fa-solid fa-location-dot me-2"></i>
+                                Himachal Pradesh
+                            </div>
+
+                            <p class="package-description">
+                                Explore the mountains, valleys and
+                                scenic towns of Himachal Pradesh
+                                with a complete travel experience.
+                            </p>
+
+
+                            <div class="package-details">
+
+                                <div class="package-detail">
+                                    <i class="fa-solid fa-hotel"></i>
+                                    Hotel accommodation
+                                </div>
+
+                                <div class="package-detail">
+                                    <i class="fa-solid fa-bus"></i>
+                                    AC transportation
+                                </div>
+
+                                <div class="package-detail">
+                                    <i class="fa-solid fa-utensils"></i>
+                                    Breakfast & dinner
+                                </div>
+
+                                <div class="package-detail">
+                                    <i class="fa-solid fa-camera"></i>
+                                    Sightseeing included
+                                </div>
+
+                            </div>
+
+
+                            <div class="d-flex justify-content-between align-items-center">
+
+                                <div>
+                                    <div class="price-label">
+                                        Starting from
+                                    </div>
+
+                                    <div class="package-price">
+                                        ₹26,499/-
+                                    </div>
+                                </div>
+
+                                <a href="booking.html"
+                                    class="btn btn-book">
+                                    Book Now
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-md-4 mb-4">
+
+                    <h5>About ChaloChale</h5>
+
+                    <p>
+                        Your trusted travel partner for unforgettable
+                        journeys. We provide the best travel experiences
+                        and help you discover amazing destinations.
+                    </p>
+
+                </div>
+
+
+                <div class="col-md-4 mb-4">
+
+                    <h5>Quick Links</h5>
+
+                    <ul class="list-unstyled">
+
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+
+                        <li>
+                            <a href="destinations.html">Destinations</a>
+                        </li>
+
+                        <li>
+                            <a href="packages.html">Packages</a>
+                        </li>
+
+                        <li>
+                            <a href="booking.html">Booking</a>
+                        </li>
+
+                        <li>
+                            <a href="contact.html">Contact</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="col-md-4 mb-4">
+
+                    <h5>Contact Us</h5>
+
+                    <ul class="list-unstyled">
+
+                        <li>
+                            <i class="fas fa-phone me-2"></i>
+                            +91 99999 88888
+                        </li>
+
+                        <li>
+                            <i class="fas fa-envelope me-2"></i>
+                            info@chalochale.com
+                        </li>
+
+                        <li>
+                            <i class="fas fa-map-marker-alt me-2"></i>
+                            Mumbai, India
+                        </li>
+
+                    </ul>
+
+
+                    <div class="social-icons mt-3">
+
+                        <a href="#">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+
+                        <a href="#">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+
+                        <a href="#">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+
+                        <a href="#">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <hr class="mt-4 mb-4"
+                style="border-color: rgba(255,255,255,0.2);">
+
+
+            <div class="row">
+
+                <div class="col-md-12 text-center">
+
+                    <p class="mb-0">
+                        &copy; 2024 ChaloChale. All rights reserved.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
